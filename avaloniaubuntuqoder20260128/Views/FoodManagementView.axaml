@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="avaloniaubuntuqoder20260128.Views.FoodManagementView">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!-- 工具列 -->
+        <Border Grid.Row="0" Background="#34495E" Padding="15">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button Content="新增食品" 
+                        Background="#27AE60" 
+                        Foreground="White"
+                        Padding="15,8"
+                        Click="OnAddFoodClick"/>
+                
+                <Button Content="重新整理" 
+                        Background="#3498DB" 
+                        Foreground="White"
+                        Padding="15,8"
+                        Click="OnRefreshClick"/>
+                
+                <TextBlock Text="搜尋：" 
+                           Foreground="White" 
+                           VerticalAlignment="Center"
+                           Margin="20,0,0,0"/>
+                
+                <TextBox x:Name="SearchTextBox"
+                         Width="200"
+                         Watermark="輸入食品名稱或商店..."
+                         TextChanged="OnSearchTextChanged"/>
+            </StackPanel>
+        </Border>
+        
+        <!-- 食品清單 -->
+        <ScrollViewer Grid.Row="1" Background="#ECF0F1">
+            <StackPanel x:Name="FoodListPanel" Margin="15"/>
+        </ScrollViewer>
+    </Grid>
+    
+</UserControl>

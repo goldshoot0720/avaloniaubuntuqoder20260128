@@ -1,0 +1,4 @@
+/home/feng2026-2027/RiderProjects/avaloniaubuntuqoder20260128/avaloniaubuntuqoder20260128/bin/Release/net10.0/linux-x64/publish/avaloniaubuntuqoder20260128.pdb
+/home/feng2026-2027/RiderProjects/avaloniaubuntuqoder20260128/avaloniaubuntuqoder20260128/bin/Release/net10.0/linux-x64/publish/libHarfBuzzSharp.so
+/home/feng2026-2027/RiderProjects/avaloniaubuntuqoder20260128/avaloniaubuntuqoder20260128/bin/Release/net10.0/linux-x64/publish/libSkiaSharp.so
+/home/feng2026-2027/RiderProjects/avaloniaubuntuqoder20260128/avaloniaubuntuqoder20260128/bin/Release/net10.0/linux-x64/publish/avaloniaubuntuqoder20260128

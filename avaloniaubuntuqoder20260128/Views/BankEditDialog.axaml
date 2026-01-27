@@ -1,0 +1,124 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="550" d:DesignHeight="700"
+        x:Class="avaloniaubuntuqoder20260128.Views.BankEditDialog"
+        Title="銀行編輯"
+        Width="550"
+        Height="700"
+        WindowStartupLocation="CenterOwner"
+        CanResize="False">
+    
+    <Border Background="#ECF0F1" Padding="20">
+        <ScrollViewer>
+            <StackPanel Spacing="15">
+                <TextBlock Text="銀行資訊" 
+                           FontSize="20" 
+                           FontWeight="Bold"
+                           Margin="0,0,0,10"/>
+                
+                <!-- 銀行名稱 -->
+                <StackPanel>
+                    <TextBlock Text="銀行名稱 *" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                    <TextBox x:Name="NameTextBox" Watermark="請輸入銀行名稱"/>
+                </StackPanel>
+                
+                <!-- 帳號 -->
+                <StackPanel>
+                    <TextBlock Text="帳號" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                    <TextBox x:Name="AccountTextBox" Watermark="請輸入帳號（選填）"/>
+                </StackPanel>
+                
+                <!-- 卡片 -->
+                <StackPanel>
+                    <TextBlock Text="卡片資訊" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                    <TextBox x:Name="CardTextBox" Watermark="請輸入卡片資訊（選填）"/>
+                </StackPanel>
+                
+                <Separator Margin="0,10"/>
+                
+                <TextBlock Text="金額資訊" 
+                           FontSize="16" 
+                           FontWeight="Bold"
+                           Margin="0,0,0,5"/>
+                
+                <!-- 存款 -->
+                <StackPanel>
+                    <TextBlock Text="存款金額 *" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                    <NumericUpDown x:Name="DepositNumeric" 
+                                   Minimum="0" 
+                                   Maximum="999999999"
+                                   Value="0"
+                                   Increment="1000"/>
+                </StackPanel>
+                
+                <!-- 提款 -->
+                <StackPanel>
+                    <TextBlock Text="提款金額" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                    <NumericUpDown x:Name="WithdrawalsNumeric" 
+                                   Minimum="0" 
+                                   Maximum="999999999"
+                                   Value="0"
+                                   Increment="1000"/>
+                </StackPanel>
+                
+                <!-- 轉帳 -->
+                <StackPanel>
+                    <TextBlock Text="轉帳金額" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                    <NumericUpDown x:Name="TransferNumeric" 
+                                   Minimum="0" 
+                                   Maximum="999999999"
+                                   Value="0"
+                                   Increment="1000"/>
+                </StackPanel>
+                
+                <Separator Margin="0,10"/>
+                
+                <TextBlock Text="其他資訊" 
+                           FontSize="16" 
+                           FontWeight="Bold"
+                           Margin="0,0,0,5"/>
+                
+                <!-- 網站 -->
+                <StackPanel>
+                    <TextBlock Text="銀行網站" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                    <TextBox x:Name="SiteTextBox" Watermark="請輸入網站網址（選填）"/>
+                </StackPanel>
+                
+                <!-- 活動 -->
+                <StackPanel>
+                    <TextBlock Text="活動網址" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                    <TextBox x:Name="ActivityTextBox" Watermark="請輸入活動網址（選填）"/>
+                </StackPanel>
+                
+                <!-- 地址 -->
+                <StackPanel>
+                    <TextBlock Text="銀行地址" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                    <TextBox x:Name="AddressTextBox" 
+                             Watermark="請輸入銀行地址（選填）"
+                             Height="60"
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True"/>
+                </StackPanel>
+                
+                <!-- 按鈕 -->
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Right" 
+                            Spacing="10"
+                            Margin="0,20,0,0">
+                    <Button Content="取消" 
+                            Padding="20,8"
+                            Click="OnCancelClick"/>
+                    
+                    <Button Content="儲存" 
+                            Background="#27AE60"
+                            Foreground="White"
+                            Padding="20,8"
+                            Click="OnSaveClick"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Border>
+    
+</Window>

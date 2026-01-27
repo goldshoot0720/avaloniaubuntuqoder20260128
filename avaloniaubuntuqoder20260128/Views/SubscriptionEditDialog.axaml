@@ -1,0 +1,82 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="600"
+        x:Class="avaloniaubuntuqoder20260128.Views.SubscriptionEditDialog"
+        Title="訂閱編輯"
+        Width="500"
+        Height="600"
+        WindowStartupLocation="CenterOwner"
+        CanResize="False">
+    
+    <Border Background="#ECF0F1" Padding="20">
+        <StackPanel Spacing="15">
+            <TextBlock Text="訂閱資訊" 
+                       FontSize="20" 
+                       FontWeight="Bold"
+                       Margin="0,0,0,10"/>
+            
+            <!-- 名稱 -->
+            <StackPanel>
+                <TextBlock Text="訂閱名稱 *" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                <TextBox x:Name="NameTextBox" Watermark="請輸入訂閱名稱"/>
+            </StackPanel>
+            
+            <!-- 網站 -->
+            <StackPanel>
+                <TextBlock Text="網站 *" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                <TextBox x:Name="SiteTextBox" Watermark="請輸入網站網址"/>
+            </StackPanel>
+            
+            <!-- 帳號 -->
+            <StackPanel>
+                <TextBlock Text="帳號" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                <TextBox x:Name="AccountTextBox" Watermark="請輸入帳號（選填）"/>
+            </StackPanel>
+            
+            <!-- 價格 -->
+            <StackPanel>
+                <TextBlock Text="價格 *" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                <NumericUpDown x:Name="PriceNumeric" 
+                               Minimum="0" 
+                               Maximum="999999"
+                               Value="0"
+                               Increment="1"/>
+            </StackPanel>
+            
+            <!-- 下次續訂日期 -->
+            <StackPanel>
+                <TextBlock Text="下次續訂日期 *" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                <DatePicker x:Name="NextDatePicker"/>
+            </StackPanel>
+            
+            <!-- 備註 -->
+            <StackPanel>
+                <TextBlock Text="備註" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                <TextBox x:Name="NoteTextBox" 
+                         Watermark="請輸入備註（選填）"
+                         Height="80"
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True"/>
+            </StackPanel>
+            
+            <!-- 按鈕 -->
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Right" 
+                        Spacing="10"
+                        Margin="0,20,0,0">
+                <Button Content="取消" 
+                        Padding="20,8"
+                        Click="OnCancelClick"/>
+                
+                <Button Content="儲存" 
+                        Background="#27AE60"
+                        Foreground="White"
+                        Padding="20,8"
+                        Click="OnSaveClick"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+    
+</Window>
