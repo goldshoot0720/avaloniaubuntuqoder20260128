@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "avaloniaubuntuqoder20260128", "avaloniaubuntuqoder20260128\avaloniaubuntuqoder20260128.csproj", "{16A4442C-E1A1-445A-B52A-18A64D1A86EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16A4442C-E1A1-445A-B52A-18A64D1A86EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16A4442C-E1A1-445A-B52A-18A64D1A86EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16A4442C-E1A1-445A-B52A-18A64D1A86EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16A4442C-E1A1-445A-B52A-18A64D1A86EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

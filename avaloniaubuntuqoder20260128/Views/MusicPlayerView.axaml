@@ -1,0 +1,137 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="avaloniaubuntuqoder20260128.Views.MusicPlayerView">
+    
+    <Border Background="#ECF0F1" Padding="20">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="500">
+            
+            <!-- Album Art / Music Icon -->
+            <Border Background="#E74C3C"
+                    Width="300"
+                    Height="300"
+                    CornerRadius="10"
+                    Margin="0,0,0,30">
+                <TextBlock Text="🎵"
+                           FontSize="120"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Foreground="White"/>
+            </Border>
+            
+            <!-- Song Info -->
+            <StackPanel Margin="0,0,0,20">
+                <TextBlock x:Name="SongTitleText"
+                           Text="Song Title"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,10"/>
+                
+                <TextBlock x:Name="ArtistText"
+                           Text="Artist Name"
+                           FontSize="16"
+                           Foreground="#7F8C8D"
+                           HorizontalAlignment="Center"/>
+            </StackPanel>
+            
+            <!-- Progress Bar -->
+            <StackPanel Margin="0,0,0,20">
+                <Grid Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock x:Name="CurrentTimeText"
+                               Grid.Column="0"
+                               Text="00:00"
+                               FontSize="12"
+                               Foreground="#7F8C8D"
+                               VerticalAlignment="Center"
+                               Margin="0,0,10,0"/>
+                    
+                    <Slider x:Name="ProgressSlider"
+                            Grid.Column="1"
+                            Minimum="0"
+                            Maximum="100"
+                            Value="0"
+                            VerticalAlignment="Center"/>
+                    
+                    <TextBlock x:Name="DurationText"
+                               Grid.Column="2"
+                               Text="00:00"
+                               FontSize="12"
+                               Foreground="#7F8C8D"
+                               VerticalAlignment="Center"
+                               Margin="10,0,0,0"/>
+                </Grid>
+            </StackPanel>
+            
+            <!-- Control Buttons -->
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Center"
+                        Spacing="15"
+                        Margin="0,0,0,20">
+                <Button x:Name="PlayButton"
+                        Content="▶"
+                        Background="#27AE60"
+                        Foreground="White"
+                        FontSize="24"
+                        Width="60"
+                        Height="60"
+                        CornerRadius="30"
+                        Click="OnPlayClick"/>
+                
+                <Button x:Name="PauseButton"
+                        Content="⏸"
+                        Background="#F39C12"
+                        Foreground="White"
+                        FontSize="24"
+                        Width="60"
+                        Height="60"
+                        CornerRadius="30"
+                        Click="OnPauseClick"/>
+                
+                <Button x:Name="StopButton"
+                        Content="⏹"
+                        Background="#E74C3C"
+                        Foreground="White"
+                        FontSize="24"
+                        Width="60"
+                        Height="60"
+                        CornerRadius="30"
+                        Click="OnStopClick"/>
+            </StackPanel>
+            
+            <!-- Volume Control -->
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Center"
+                        Spacing="10"
+                        Margin="0,0,0,20">
+                <TextBlock Text="🔊"
+                           FontSize="20"
+                           VerticalAlignment="Center"/>
+                
+                <Slider x:Name="VolumeSlider"
+                        Width="200"
+                        Minimum="0"
+                        Maximum="100"
+                        Value="50"
+                        VerticalAlignment="Center"/>
+            </StackPanel>
+            
+            <!-- Close Button -->
+            <Button x:Name="CloseButton"
+                    Content="✕ Close Player"
+                    Background="#95A5A6"
+                    Foreground="White"
+                    Padding="30,10"
+                    HorizontalAlignment="Center"
+                    Click="OnCloseClick"/>
+        </StackPanel>
+    </Border>
+</UserControl>

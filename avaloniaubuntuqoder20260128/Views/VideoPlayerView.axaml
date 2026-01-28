@@ -1,0 +1,117 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vlc="clr-namespace:LibVLCSharp.Avalonia;assembly=LibVLCSharp.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="avaloniaubuntuqoder20260128.Views.VideoPlayerView">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Video Player -->
+        <Border Grid.Row="0" Background="Black" Margin="10">
+            <vlc:VideoView x:Name="VideoView"/>
+        </Border>
+        
+        <!-- Controls -->
+        <Border Grid.Row="1" Background="#2C3E50" Padding="15">
+            <StackPanel Spacing="10">
+                <!-- Title -->
+                <TextBlock x:Name="TitleText"
+                           Text="Video Player"
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+                
+                <!-- Progress Bar -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock x:Name="CurrentTimeText"
+                               Grid.Column="0"
+                               Text="00:00"
+                               Foreground="White"
+                               VerticalAlignment="Center"
+                               Margin="0,0,10,0"/>
+                    
+                    <Slider x:Name="ProgressSlider"
+                            Grid.Column="1"
+                            Minimum="0"
+                            Maximum="100"
+                            Value="0"
+                            VerticalAlignment="Center"/>
+                    
+                    <TextBlock x:Name="DurationText"
+                               Grid.Column="2"
+                               Text="00:00"
+                               Foreground="White"
+                               VerticalAlignment="Center"
+                               Margin="10,0,0,0"/>
+                </Grid>
+                
+                <!-- Control Buttons -->
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Center"
+                            Spacing="10">
+                    <Button x:Name="PlayButton"
+                            Content="▶ Play"
+                            Background="#27AE60"
+                            Foreground="White"
+                            Padding="20,10"
+                            Click="OnPlayClick"/>
+                    
+                    <Button x:Name="PauseButton"
+                            Content="⏸ Pause"
+                            Background="#F39C12"
+                            Foreground="White"
+                            Padding="20,10"
+                            Click="OnPauseClick"/>
+                    
+                    <Button x:Name="StopButton"
+                            Content="⏹ Stop"
+                            Background="#E74C3C"
+                            Foreground="White"
+                            Padding="20,10"
+                            Click="OnStopClick"/>
+                    
+                    <Button x:Name="CloseButton"
+                            Content="✕ Close"
+                            Background="#95A5A6"
+                            Foreground="White"
+                            Padding="20,10"
+                            Click="OnCloseClick"/>
+                </StackPanel>
+                
+                <!-- Volume Control -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock Grid.Column="0"
+                               Text="🔊 Volume:"
+                               Foreground="White"
+                               VerticalAlignment="Center"
+                               Margin="0,0,10,0"/>
+                    
+                    <Slider x:Name="VolumeSlider"
+                            Grid.Column="1"
+                            Minimum="0"
+                            Maximum="100"
+                            Value="50"
+                            VerticalAlignment="Center"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
